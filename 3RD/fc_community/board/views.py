@@ -38,5 +38,4 @@ def board_list(request):
     paginator= Paginator(all_boards,2)
 
     boards=paginator.get_page(page)
-
     return render(request, 'board_list.html', {'boards':boards})

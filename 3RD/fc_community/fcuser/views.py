@@ -6,15 +6,15 @@ from .forms import LoginForm
 # Create your views here.
 
 def home(request):
-    user_id = request.session.get('user')
-    print(user_id)
+    # user_id = request.session.get('user')
+    # print(user_id)
 
-    if user_id:
-        fcuser= Fcuser.objects.get(pk=user_id)
-        print(fcuser)
-        return HttpResponse(fcuser.username)
+    # if user_id:
+    #     fcuser= Fcuser.objects.get(pk=user_id)
+    #     print(fcuser)
+    #     return HttpResponse(fcuser.username)
 
-    return HttpResponse('Home!')
+    return render(request, "home.html")
 
 def logout(request):
     if request.session.get('user'):
